@@ -5,6 +5,7 @@ calling, and gates any high-severity finding behind human approval before it's c
 
 ![FleetGuard Swagger UI](docs/screenshots/fleetguard-swagger.png)
 
+[![Eval](https://github.com/Prennoy99/fleetguard/actions/workflows/eval.yml/badge.svg)](https://github.com/Prennoy99/fleetguard/actions/workflows/eval.yml)
 [![License: MIT](https://img.shields.io/github/license/Prennoy99/fleetguard?color=blue)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.12%2B-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
