@@ -1,0 +1,428 @@
+{
+  "run_at": "2026-08-18T07:36:03.836689+00:00",
+  "total_scenarios": 18,
+  "passed": 18,
+  "pass_rate": 1.0,
+  "min_hit_rate": 0.8,
+  "gate_passed": true,
+  "forced_fallback_count": 0,
+  "results": [
+    {
+      "scenario_id": "S01",
+      "anomaly_type": "engine_temp_spike",
+      "expected_severity": "low",
+      "expected_signals": [
+        "engine_temp_c"
+      ],
+      "got_severity": "low",
+      "got_signals": [
+        "engine_temp_c"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 26
+    },
+    {
+      "scenario_id": "S02",
+      "anomaly_type": "oil_pressure_dip",
+      "expected_severity": "low",
+      "expected_signals": [
+        "oil_pressure_bar"
+      ],
+      "got_severity": "low",
+      "got_signals": [
+        "oil_pressure_bar"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 27
+    },
+    {
+      "scenario_id": "S03",
+      "anomaly_type": "battery_voltage_dip",
+      "expected_severity": "low",
+      "expected_signals": [
+        "battery_v"
+      ],
+      "got_severity": "low",
+      "got_signals": [
+        "battery_v",
+        "engine_temp_c"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 28
+    },
+    {
+      "scenario_id": "S04",
+      "anomaly_type": "fuel_rate_blip",
+      "expected_severity": "low",
+      "expected_signals": [
+        "fuel_rate_lh"
+      ],
+      "got_severity": "low",
+      "got_signals": [
+        "fuel_rate_lh"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 29
+    },
+    {
+      "scenario_id": "S05",
+      "anomaly_type": "isolated_harsh_accel",
+      "expected_severity": "low",
+      "expected_signals": [
+        "harsh_accel"
+      ],
+      "got_severity": "low",
+      "got_signals": [
+        "harsh_accel"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 30
+    },
+    {
+      "scenario_id": "S06",
+      "anomaly_type": "isolated_hard_brake",
+      "expected_severity": "low",
+      "expected_signals": [
+        "hard_brake"
+      ],
+      "got_severity": "low",
+      "got_signals": [
+        "hard_brake"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 31
+    },
+    {
+      "scenario_id": "S07",
+      "anomaly_type": "sustained_overheating",
+      "expected_severity": "medium",
+      "expected_signals": [
+        "engine_temp_c"
+      ],
+      "got_severity": "medium",
+      "got_signals": [
+        "engine_temp_c"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 32
+    },
+    {
+      "scenario_id": "S08",
+      "anomaly_type": "sustained_low_oil_pressure",
+      "expected_severity": "medium",
+      "expected_signals": [
+        "oil_pressure_bar"
+      ],
+      "got_severity": "medium",
+      "got_signals": [
+        "oil_pressure_bar"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 33
+    },
+    {
+      "scenario_id": "S09",
+      "anomaly_type": "battery_degradation_trend",
+      "expected_severity": "medium",
+      "expected_signals": [
+        "battery_v"
+      ],
+      "got_severity": "medium",
+      "got_signals": [
+        "battery_v"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 34
+    },
+    {
+      "scenario_id": "S10",
+      "anomaly_type": "temp_oil_cross_signal",
+      "expected_severity": "medium",
+      "expected_signals": [
+        "engine_temp_c",
+        "oil_pressure_bar"
+      ],
+      "got_severity": "medium",
+      "got_signals": [
+        "engine_temp_c",
+        "oil_pressure_bar"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 35
+    },
+    {
+      "scenario_id": "S11",
+      "anomaly_type": "sustained_fuel_inefficiency",
+      "expected_severity": "medium",
+      "expected_signals": [
+        "fuel_rate_lh"
+      ],
+      "got_severity": "medium",
+      "got_signals": [
+        "fuel_rate_lh"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 36
+    },
+    {
+      "scenario_id": "S12",
+      "anomaly_type": "elevated_brake_accel_rate",
+      "expected_severity": "medium",
+      "expected_signals": [
+        "hard_brake",
+        "harsh_accel"
+      ],
+      "got_severity": "medium",
+      "got_signals": [
+        "hard_brake",
+        "harsh_accel"
+      ],
+      "got_status": "auto_closed",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 37
+    },
+    {
+      "scenario_id": "S13",
+      "anomaly_type": "critical_oil_pressure",
+      "expected_severity": "high",
+      "expected_signals": [
+        "oil_pressure_bar"
+      ],
+      "got_severity": "high",
+      "got_signals": [
+        "oil_pressure_bar"
+      ],
+      "got_status": "pending_approval",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 38
+    },
+    {
+      "scenario_id": "S14",
+      "anomaly_type": "battery_collapse",
+      "expected_severity": "high",
+      "expected_signals": [
+        "battery_v"
+      ],
+      "got_severity": "high",
+      "got_signals": [
+        "battery_v"
+      ],
+      "got_status": "pending_approval",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 39
+    },
+    {
+      "scenario_id": "S15",
+      "anomaly_type": "severe_overheating",
+      "expected_severity": "high",
+      "expected_signals": [
+        "engine_temp_c"
+      ],
+      "got_severity": "high",
+      "got_signals": [
+        "engine_temp_c"
+      ],
+      "got_status": "pending_approval",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 40
+    },
+    {
+      "scenario_id": "S16",
+      "anomaly_type": "hard_brake_cluster",
+      "expected_severity": "high",
+      "expected_signals": [
+        "hard_brake"
+      ],
+      "got_severity": "high",
+      "got_signals": [
+        "hard_brake"
+      ],
+      "got_status": "pending_approval",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 41
+    },
+    {
+      "scenario_id": "S17",
+      "anomaly_type": "harsh_accel_cluster",
+      "expected_severity": "high",
+      "expected_signals": [
+        "harsh_accel"
+      ],
+      "got_severity": "high",
+      "got_signals": [
+        "harsh_accel"
+      ],
+      "got_status": "pending_approval",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "query_telemetry",
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 42
+    },
+    {
+      "scenario_id": "S18",
+      "anomaly_type": "cascading_temp_oil_failure",
+      "expected_severity": "high",
+      "expected_signals": [
+        "engine_temp_c",
+        "oil_pressure_bar"
+      ],
+      "got_severity": "high",
+      "got_signals": [
+        "engine_temp_c",
+        "oil_pressure_bar"
+      ],
+      "got_status": "pending_approval",
+      "severity_match": true,
+      "signals_match": true,
+      "passed": true,
+      "forced_fallback": false,
+      "tool_call_order": [
+        "run_fault_classifier",
+        "compute_severity"
+      ],
+      "incident_id": 43
+    }
+  ]
+}

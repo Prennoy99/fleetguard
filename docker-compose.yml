@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: fleetguard-postgres
+    environment:
+      POSTGRES_USER: fleetguard
+      POSTGRES_PASSWORD: fleetguard
+      POSTGRES_DB: fleetguard
+    ports:
+      - "5432:5432"
+    volumes:
+      - fleetguard_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fleetguard -d fleetguard"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build: .
+    container_name: fleetguard-app
+    environment:
+      DATABASE_URL: postgresql://fleetguard:fleetguard@postgres:5432/fleetguard
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.1-flash-lite}
+      API_KEY: ${API_KEY}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  fleetguard_pg_data:

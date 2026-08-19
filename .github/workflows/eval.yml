@@ -1,0 +1,61 @@
+name: Eval
+
+# The full eval harness hits the Gemini API ~18+ times (more with retries
+# against the free-tier rate limit), so this runs on push/PR to main only —
+# not every feature-branch commit.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: fleetguard
+          POSTGRES_PASSWORD: fleetguard
+          POSTGRES_DB: fleetguard
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U fleetguard -d fleetguard"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+
+    env:
+      DATABASE_URL: postgresql://fleetguard:fleetguard@localhost:5432/fleetguard
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: gemini-3.1-flash-lite
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Seed telemetry + scenarios
+        run: python -m generator.generate
+
+      - name: Run test suite
+        run: PYTHONPATH=. python -m pytest tests/ -q
+
+      - name: Run evaluation harness (fails below 80% pass rate)
+        run: PYTHONPATH=. python -m eval.evaluate --min-hit-rate 0.8 --sleep-between 2
+
+      - name: Upload eval report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: eval/results.json

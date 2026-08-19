@@ -1,0 +1,221 @@
+[
+  {
+    "scenario_id": "S01",
+    "vehicle_id": "veh-001",
+    "start_time": "2026-06-04T10:00:00+00:00",
+    "end_time": "2026-06-04T10:00:00+00:00",
+    "anomaly_type": "engine_temp_spike",
+    "severity": "low",
+    "signals": [
+      "engine_temp_c"
+    ],
+    "description": "Single-reading engine temperature spike, no sustained pattern."
+  },
+  {
+    "scenario_id": "S02",
+    "vehicle_id": "veh-002",
+    "start_time": "2026-06-05T10:00:00+00:00",
+    "end_time": "2026-06-05T10:00:00+00:00",
+    "anomaly_type": "oil_pressure_dip",
+    "severity": "low",
+    "signals": [
+      "oil_pressure_bar"
+    ],
+    "description": "Single-reading oil pressure dip, recovers immediately."
+  },
+  {
+    "scenario_id": "S03",
+    "vehicle_id": "veh-003",
+    "start_time": "2026-06-06T10:00:00+00:00",
+    "end_time": "2026-06-06T10:00:00+00:00",
+    "anomaly_type": "battery_voltage_dip",
+    "severity": "low",
+    "signals": [
+      "battery_v"
+    ],
+    "description": "Single-reading battery voltage dip."
+  },
+  {
+    "scenario_id": "S04",
+    "vehicle_id": "veh-004",
+    "start_time": "2026-06-07T10:00:00+00:00",
+    "end_time": "2026-06-07T10:00:00+00:00",
+    "anomaly_type": "fuel_rate_blip",
+    "severity": "low",
+    "signals": [
+      "fuel_rate_lh"
+    ],
+    "description": "Single-reading fuel consumption blip."
+  },
+  {
+    "scenario_id": "S05",
+    "vehicle_id": "veh-005",
+    "start_time": "2026-06-08T10:00:00+00:00",
+    "end_time": "2026-06-08T10:00:00+00:00",
+    "anomaly_type": "isolated_harsh_accel",
+    "severity": "low",
+    "signals": [
+      "harsh_accel"
+    ],
+    "description": "One isolated harsh-acceleration event, not part of a cluster."
+  },
+  {
+    "scenario_id": "S06",
+    "vehicle_id": "veh-006",
+    "start_time": "2026-06-09T10:00:00+00:00",
+    "end_time": "2026-06-09T10:00:00+00:00",
+    "anomaly_type": "isolated_hard_brake",
+    "severity": "low",
+    "signals": [
+      "hard_brake"
+    ],
+    "description": "One isolated hard-braking event, not part of a cluster."
+  },
+  {
+    "scenario_id": "S07",
+    "vehicle_id": "veh-007",
+    "start_time": "2026-06-10T09:00:00+00:00",
+    "end_time": "2026-06-10T09:25:00+00:00",
+    "anomaly_type": "sustained_overheating",
+    "severity": "medium",
+    "signals": [
+      "engine_temp_c"
+    ],
+    "description": "Engine temperature ramps up and stays elevated for 30 minutes."
+  },
+  {
+    "scenario_id": "S08",
+    "vehicle_id": "veh-008",
+    "start_time": "2026-06-11T09:00:00+00:00",
+    "end_time": "2026-06-11T09:25:00+00:00",
+    "anomaly_type": "sustained_low_oil_pressure",
+    "severity": "medium",
+    "signals": [
+      "oil_pressure_bar"
+    ],
+    "description": "Oil pressure stays below baseline for 30 minutes."
+  },
+  {
+    "scenario_id": "S09",
+    "vehicle_id": "veh-009",
+    "start_time": "2026-06-12T09:00:00+00:00",
+    "end_time": "2026-06-12T09:25:00+00:00",
+    "anomaly_type": "battery_degradation_trend",
+    "severity": "medium",
+    "signals": [
+      "battery_v"
+    ],
+    "description": "Battery voltage declines steadily over 30 minutes."
+  },
+  {
+    "scenario_id": "S10",
+    "vehicle_id": "veh-010",
+    "start_time": "2026-06-13T09:00:00+00:00",
+    "end_time": "2026-06-13T09:25:00+00:00",
+    "anomaly_type": "temp_oil_cross_signal",
+    "severity": "medium",
+    "signals": [
+      "engine_temp_c",
+      "oil_pressure_bar"
+    ],
+    "description": "Rising engine temperature and dropping oil pressure together \u2014 developing fault."
+  },
+  {
+    "scenario_id": "S11",
+    "vehicle_id": "veh-011",
+    "start_time": "2026-06-14T09:00:00+00:00",
+    "end_time": "2026-06-14T09:25:00+00:00",
+    "anomaly_type": "sustained_fuel_inefficiency",
+    "severity": "medium",
+    "signals": [
+      "fuel_rate_lh"
+    ],
+    "description": "Fuel consumption stays elevated relative to speed for 30 minutes."
+  },
+  {
+    "scenario_id": "S12",
+    "vehicle_id": "veh-012",
+    "start_time": "2026-06-15T09:00:00+00:00",
+    "end_time": "2026-06-15T09:25:00+00:00",
+    "anomaly_type": "elevated_brake_accel_rate",
+    "severity": "medium",
+    "signals": [
+      "hard_brake",
+      "harsh_accel"
+    ],
+    "description": "Hard-brake/harsh-accel frequency elevated above baseline for 30 minutes, short of a dense cluster."
+  },
+  {
+    "scenario_id": "S13",
+    "vehicle_id": "veh-013",
+    "start_time": "2026-06-16T09:00:00+00:00",
+    "end_time": "2026-06-16T09:55:00+00:00",
+    "anomaly_type": "critical_oil_pressure",
+    "severity": "high",
+    "signals": [
+      "oil_pressure_bar"
+    ],
+    "description": "Oil pressure collapses to a critical level for a full hour."
+  },
+  {
+    "scenario_id": "S14",
+    "vehicle_id": "veh-014",
+    "start_time": "2026-06-17T09:00:00+00:00",
+    "end_time": "2026-06-17T09:55:00+00:00",
+    "anomaly_type": "battery_collapse",
+    "severity": "high",
+    "signals": [
+      "battery_v"
+    ],
+    "description": "Battery voltage collapses toward no-start territory for a full hour."
+  },
+  {
+    "scenario_id": "S15",
+    "vehicle_id": "veh-015",
+    "start_time": "2026-06-18T09:00:00+00:00",
+    "end_time": "2026-06-18T09:55:00+00:00",
+    "anomaly_type": "severe_overheating",
+    "severity": "high",
+    "signals": [
+      "engine_temp_c"
+    ],
+    "description": "Engine temperature holds at a severe, breakdown-risk level for a full hour."
+  },
+  {
+    "scenario_id": "S16",
+    "vehicle_id": "veh-016",
+    "start_time": "2026-06-19T09:00:00+00:00",
+    "end_time": "2026-06-19T09:55:00+00:00",
+    "anomaly_type": "hard_brake_cluster",
+    "severity": "high",
+    "signals": [
+      "hard_brake"
+    ],
+    "description": "Dense cluster of hard-braking events within an hour \u2014 safety risk."
+  },
+  {
+    "scenario_id": "S17",
+    "vehicle_id": "veh-017",
+    "start_time": "2026-06-20T09:00:00+00:00",
+    "end_time": "2026-06-20T09:55:00+00:00",
+    "anomaly_type": "harsh_accel_cluster",
+    "severity": "high",
+    "signals": [
+      "harsh_accel"
+    ],
+    "description": "Dense cluster of harsh-acceleration events within an hour \u2014 safety risk."
+  },
+  {
+    "scenario_id": "S18",
+    "vehicle_id": "veh-018",
+    "start_time": "2026-06-21T09:00:00+00:00",
+    "end_time": "2026-06-21T09:55:00+00:00",
+    "anomaly_type": "cascading_temp_oil_failure",
+    "severity": "high",
+    "signals": [
+      "engine_temp_c",
+      "oil_pressure_bar"
+    ],
+    "description": "Severe overheating and critical oil pressure simultaneously \u2014 cascading failure risk."
+  }
+]
